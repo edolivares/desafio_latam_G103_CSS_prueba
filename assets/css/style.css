@@ -228,6 +228,24 @@ body {
     gap: 2rem;
 }
 
+/* Sidebar para desktop - oculto por defecto */
+.desktop-sidebar {
+    display: none;
+}
+
+/* Contenido principal */
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Content area para móvil */
+.content-area {
+    display: contents;
+}
+
 /* Sección Hero */
 .hero-section {
     background: linear-gradient(135deg, #1976d2, #42a5f5);
@@ -840,11 +858,73 @@ body {
 
 /* Media Queries - Desktop grande (>= 992px) */
 @media (min-width: 992px) {
+    /* Ocultar header en desktop */
+    .header {
+        display: none;
+    }
+    
+    /* Mostrar sidebar en desktop */
+    .desktop-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 250px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #1976d2, #1565c0);
+        color: white;
+        padding: 2rem 1.5rem;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Ajustar main para sidebar */
+    .main {
+        flex-direction: row;
+        padding: 0;
+        gap: 0;
+    }
+    
+    .main-content {
+        flex: 1;
+        padding: 0;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas: 
+            "hero"
+            "filters"
+            "content"
+            "footer";
+        min-height: 100vh;
+    }
+    
+    .hero-section {
+        grid-area: hero;
+        margin: 2rem 2rem 0 2rem;
+    }
+    
+    .filters {
+        grid-area: filters;
+        margin: 1rem 2rem 0 2rem;
+        padding: 1.5rem 2rem;
+    }
+    
+    .content-area {
+        grid-area: content;
+        overflow-y: auto;
+    }
+    
+    .footer {
+        grid-area: footer;
+        margin-top: auto;
+    }
+
+    #catalogo {
+        padding: 0px 30px !important;
+    }
+    
     /* Galería desktop */
     .product-section {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
-        padding: 0 2rem;
+        padding: 0;
     }
     
     .product-card {
@@ -889,6 +969,55 @@ body {
         justify-content: flex-start;
         margin-left: 2rem;
     }
+    
+    /* Estilos del sidebar */
+    .sidebar-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    
+    .sidebar-logo .logo-img {
+        height: 60px;
+        filter: brightness(0) invert(1);
+    }
+    
+    .sidebar-logo h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebar-nav {
+        flex: 1;
+    }
+    
+    .sidebar-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .sidebar-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+        display: block;
+        text-align: center;
+    }
+    
+    .sidebar-link:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
 }
 
 /* Media Queries - Laptop (>= 1024px) */
@@ -900,7 +1029,10 @@ body {
     .hero-section p {
         font-size: 1.5rem;
     }
-    
+}
+
+/* Media Queries - Desktop Grande (>= 1440px) */
+@media (min-width: 1440px) {
     .product-section {
         grid-template-columns: repeat(4, 1fr);
     }

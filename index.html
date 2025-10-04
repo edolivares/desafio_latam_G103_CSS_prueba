@@ -31,30 +31,49 @@
             </nav>
         </header>
 
-        <!-- Hero Section -->
-        <section id="inicio" class="hero-section">
-            <h2>Bienvenido a Glossy Windows</h2>
-            <p>Descubre ventanas de alta calidad con acabados brillantes y transparencias excepcionales</p>
-        </section>
-
-        <!-- Sección de filtros y búsqueda -->
-        <aside class="filters">
-            <div class="filter-content">
-                <button class="filter-btn">
-                    <span class="material-icons">tune</span>
-                    <span class="filter-text">Filtros</span>
-                    <span class="filter-pill">2</span>
-                </button>
-                <div class="search-container">
-                    <span class="material-icons search-icon">search</span>
-                    <input type="text" class="search-input" placeholder="Buscar producto">
-                </div>
-            </div>
-        </aside>
-
         <!-- Sección principal -->
         <main class="main">
-            <section id="catalogo" class="product-section">
+            <!-- Sidebar para desktop -->
+            <aside class="desktop-sidebar">
+                <div class="sidebar-logo">
+                    <img src="assets/css/images/logo.svg" alt="Glossy Windows Logo" class="logo-img">
+                </div>
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-links">
+                        <li><a href="#inicio" class="sidebar-link">Inicio</a></li>
+                        <li><a href="#catalogo" class="sidebar-link">Catálogo</a></li>
+                        <li><a href="#servicios" class="sidebar-link">Servicios</a></li>
+                        <li><a href="#contacto" class="sidebar-link">Contacto</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Contenido principal con Grid -->
+            <div class="main-content">
+                <!-- Hero Section -->
+                <section id="inicio" class="hero-section">
+                    <h2>Bienvenido a Glossy Windows</h2>
+                    <p>Descubre ventanas de alta calidad con acabados brillantes y transparencias excepcionales</p>
+                </section>
+
+                <!-- Filtros -->
+                <aside class="filters">
+                    <div class="filter-content">
+                        <button class="filter-btn">
+                            <span class="material-icons">tune</span>
+                            <span class="filter-text">Filtros</span>
+                            <span class="filter-pill">2</span>
+                        </button>
+                        <div class="search-container">
+                            <span class="material-icons search-icon">search</span>
+                            <input type="text" class="search-input" placeholder="Buscar producto">
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Contenido -->
+                <div class="content-area">
+                    <section id="catalogo" class="product-section">
                 <article class="product-card">
                     <div class="product-image">
                         <img src="https://placehold.co/300x250/4CAF50/FFFFFF?text=1" alt="Ventana Glossy Premium">
@@ -127,6 +146,15 @@
                         <button class="btn-primary">Ver más</button>
                     </div>
                 </article>
+                <article class="product-card">
+                    <div class="product-image">
+                        <img src="https://placehold.co/300x250/607D8B/FFFFFF?text=9" alt="Ventana Glossy Aluminio">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ventana Glossy Aluminio</h3>
+                        <button class="btn-primary">Ver más</button>
+                    </div>
+                </article>
             </section>
 
             <!-- Paginación -->
@@ -168,8 +196,8 @@
                     </div>
                 </div>
             </section>
-
-            
+                </div>
+            </div>
         </main>
 
         <!-- Footer -->
