@@ -1,4 +1,4 @@
-/* Reset y configuración base */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Container principal con Flexbox - Mobile First */
 .container {
     display: flex;
     flex-direction: column;
@@ -21,7 +20,6 @@ body {
     background-color: #fff;
 }
 
-/* Header */
 .header {
     background: linear-gradient(135deg, #1976d2, #1565c0);
     color: white;
@@ -107,7 +105,6 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Sección de filtros */
 .filters {
     background: linear-gradient(135deg, #e3f2fd, #bbdefb);
     padding: 1rem;
@@ -127,7 +124,6 @@ body {
     justify-content: space-between;
 }
 
-/* Botón de filtros */
 .filter-btn {
     background-color: #1976d2;
     color: white;
@@ -180,7 +176,6 @@ body {
     margin-left: 0.25rem;
 }
 
-/* Contenedor de búsqueda */
 .search-container {
     position: relative;
     flex: 1;
@@ -219,7 +214,6 @@ body {
     color: #999;
 }
 
-/* Sección principal */
 .main {
     flex: 1;
     padding: 1rem;
@@ -228,12 +222,10 @@ body {
     gap: 2rem;
 }
 
-/* Sidebar para desktop - oculto por defecto */
 .desktop-sidebar {
     display: none;
 }
 
-/* Contenido principal */
 .main-content {
     width: 100%;
     display: flex;
@@ -241,12 +233,10 @@ body {
     gap: 2rem;
 }
 
-/* Content area para móvil */
 .content-area {
     display: contents;
 }
 
-/* Sección Hero */
 .hero-section {
     background: linear-gradient(135deg, #1976d2, #42a5f5);
     color: white;
@@ -291,7 +281,6 @@ body {
     z-index: 1;
 }
 
-/* Galería de productos */
 .product-section {
     display: grid;
     grid-template-columns: 1fr;
@@ -337,7 +326,6 @@ body {
     transform: scale(1.1);
 }
 
-/* En móvil, mostrar solo los primeros 4 productos */
 .product-card:nth-child(n+5) {
     display: none;
 }
@@ -395,7 +383,6 @@ body {
     box-shadow: 0 8px 16px rgba(25, 118, 210, 0.4);
 }
 
-/* Sección de Servicios */
 .services-section {
     background: linear-gradient(135deg, #f8f9fa, #e3f2fd);
     padding: 0rem 0.5rem 4rem 0.5rem;
@@ -452,7 +439,6 @@ body {
     line-height: 1.6;
 }
 
-/* División estilizada entre secciones */
 .section-divider {
     display: flex;
     align-items: center;
@@ -488,7 +474,6 @@ body {
     display: block;
 }
 
-/* Paginación */
 .pagination {
     display: flex;
     justify-content: center;
@@ -521,12 +506,15 @@ body {
     box-shadow: 0 4px 8px rgba(25, 118, 210, 0.3);
 }
 
-/* Footer */
 .footer {
     background: linear-gradient(135deg, #002f6c, #1976d2);
     color: white;
     padding: 2rem 1rem 1rem;
     margin-top: auto;
+}
+
+.footer-desktop {
+    display: none;
 }
 
 .footer-content {
@@ -600,7 +588,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Media Queries - Mobile pequeño (<= 480px) */
 @media (max-width: 480px) {
     .hero-section {
         margin: 1rem;
@@ -637,7 +624,6 @@ body {
         font-size: 1.25rem;
     }
     
-    /* Filtros en móvil muy pequeño */
     .filter-content {
         flex-direction: column;
         gap: 0.75rem;
@@ -648,7 +634,6 @@ body {
     }
 }
 
-/* Media Queries - Mobile medio (321px - 425px) */
 @media (min-width: 321px) and (max-width: 425px) {
     .hero-section {
         margin: 1rem 1.5rem;
@@ -672,7 +657,6 @@ body {
     }
 }
 
-/* Media Queries - Mobile grande (426px - 575px) */
 @media (min-width: 426px) and (max-width: 575px) {
     .hero-section {
         margin: 1rem 2rem;
@@ -696,15 +680,12 @@ body {
     }
 }
 
-/* Media Queries - Tablet (>= 576px) */
 @media (min-width: 576px) {
-    /* Mantener estructura básica de móvil */
     .container {
         flex-direction: column;
         min-height: 100vh;
     }
     
-    /* Header tablet - mantener arriba pero con navegación expandida */
     .header {
         flex-direction: row;
         justify-content: space-between;
@@ -730,7 +711,6 @@ body {
         font-size: 1.5rem;
     }
     
-    /* Navegación tablet - expandida horizontalmente */
     .menu-toggle {
         display: none;
     }
@@ -754,14 +734,12 @@ body {
         white-space: nowrap;
     }
     
-    /* Contenido principal - sin margen lateral */
     .main {
         margin-left: 0;
         padding: 2rem;
         width: 100%;
     }
     
-    /* Filtros tablet */
     .filters {
         padding: 1.5rem 2rem;
         justify-content: center;
@@ -784,7 +762,6 @@ body {
         flex: 1;
     }
     
-    /* Galería tablet */
     .product-section {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -796,12 +773,10 @@ body {
         width: 100%;
     }
     
-    /* En tablet, mostrar solo 4 productos (2 por fila) */
     .product-card:nth-child(n+5) {
         display: none;
     }
     
-    /* Asegurar que los primeros 4 productos se muestren en tablet */
     .product-card:nth-child(1),
     .product-card:nth-child(2),
     .product-card:nth-child(3),
@@ -809,7 +784,6 @@ body {
         display: block;
     }
     
-    /* Servicios tablet */
     .services-grid {
         flex-direction: row;
         flex-wrap: wrap;
@@ -822,7 +796,6 @@ body {
         max-width: 350px;
     }
     
-    /* División tablet */
     .section-divider {
         margin: 4rem 0;
     }
@@ -831,7 +804,6 @@ body {
         margin: 0 1.5rem;
     }
     
-    /* Footer tablet */
     .footer {
         position: relative;
         width: 100%;
@@ -856,26 +828,28 @@ body {
     }
 }
 
-/* Media Queries - Desktop grande (>= 992px) */
 @media (min-width: 992px) {
-    /* Ocultar header en desktop */
+
     .header {
         display: none;
     }
     
-    /* Mostrar sidebar en desktop */
     .desktop-sidebar {
         display: flex;
         flex-direction: column;
-        flex-basis: 250px;
-        flex-shrink: 0;
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        width: 250px;
         background: linear-gradient(135deg, #1976d2, #1565c0);
         color: white;
         padding: 2rem 1.5rem;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
     
-    /* Ajustar main para sidebar */
     .main {
         flex-direction: row;
         padding: 0;
@@ -883,36 +857,33 @@ body {
     }
     
     .main-content {
-        flex: 1;
+        margin-left: 250px;
         padding: 0;
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-areas: 
-            "hero"
-            "filters"
-            "content"
-            "footer";
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
     }
     
     .hero-section {
-        grid-area: hero;
         margin: 2rem 2rem 0 2rem;
     }
     
     .filters {
-        grid-area: filters;
         margin: 1rem 2rem 0 2rem;
         padding: 1.5rem 2rem;
     }
     
     .content-area {
-        grid-area: content;
+        flex: 1;
         overflow-y: auto;
     }
     
     .footer {
-        grid-area: footer;
+        display: none;
+    }
+    
+    .footer-desktop {
+        display: block;
         margin-top: auto;
     }
 
@@ -920,7 +891,6 @@ body {
         padding: 0px 30px !important;
     }
     
-    /* Galería desktop */
     .product-section {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
@@ -932,17 +902,18 @@ body {
         width: 100%;
     }
     
-    /* En desktop, mostrar todos los productos */
     .product-card:nth-child(n+1) {
-        display: block;
+        display: block !important;
     }
     
-    /* Sobrescribir regla de móvil para desktop */
     .product-card:nth-child(n+5) {
-        display: block;
+        display: block !important;
     }
     
-    /* Servicios desktop */
+    .product-card:nth-child(9) {
+        display: block !important;
+    }
+    
     .services-grid {
         flex-direction: row;
         flex-wrap: nowrap;
@@ -955,10 +926,10 @@ body {
         max-width: none;
     }
     
-    /* Footer desktop */
     .footer-content {
         gap: 4rem;
     }
+
     
     .contact-info,
     .social-links {
@@ -970,7 +941,6 @@ body {
         margin-left: 2rem;
     }
     
-    /* Estilos del sidebar */
     .sidebar-logo {
         display: flex;
         flex-direction: column;
@@ -1020,7 +990,6 @@ body {
     }
 }
 
-/* Media Queries - Laptop (>= 1024px) */
 @media (min-width: 1024px) {
     .hero-section h2 {
         font-size: 3rem;
@@ -1029,16 +998,27 @@ body {
     .hero-section p {
         font-size: 1.5rem;
     }
+    
+    .product-card:nth-child(n+1) {
+        display: block !important;
+    }
+    
+    .product-card:nth-child(n+5) {
+        display: block !important;
+    }
 }
 
-/* Media Queries - Desktop Grande (>= 1440px) */
 @media (min-width: 1440px) {
     .product-section {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .product-card:nth-child(9) {
+        display: none !important;
+    }
 }
 
-/* Animaciones adicionales */
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -1063,18 +1043,17 @@ body {
 .product-card:nth-child(7) { animation-delay: 0.7s; }
 .product-card:nth-child(8) { animation-delay: 0.8s; }
 
-/* Efectos de scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Estados de carga */
+
 .loading {
     opacity: 0.6;
     pointer-events: none;
 }
 
-/* Mejoras de accesibilidad */
+
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -1083,7 +1062,6 @@ html {
     }
 }
 
-/* Focus visible para mejor accesibilidad */
 .nav-link:focus-visible,
 .btn-primary:focus-visible,
 .page-btn:focus-visible,
